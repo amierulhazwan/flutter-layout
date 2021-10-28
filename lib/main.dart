@@ -34,7 +34,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Lols"),
+          elevation: 5,
+          title: const Text(
+            "User List Data",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
         ),
         body: FutureBuilder(
           future: ReadJsonData(),
@@ -47,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   itemCount: items == null ? 0 : items.length,
                   itemBuilder: (context, index) {
                     return Card(
-                      elevation: 5,
+                      elevation: 3,
                       margin: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                       child: Container(
                         padding: EdgeInsets.all(8),
@@ -76,9 +80,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                       padding:
                                           EdgeInsets.only(left: 8, right: 8),
                                       child: Text(
-                                        items[index].first_name.toString(),
+                                        items[index].first_name.toString() +
+                                            " " +
+                                            items[index].last_name.toString(),
                                         style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 20,
+                                            color: Colors.blue,
                                             fontWeight: FontWeight.bold),
                                       ),
                                     ),
@@ -87,7 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                       padding:
                                           EdgeInsets.only(left: 8, right: 8),
                                       child: Text(
-                                          items[index].username.toString()),
+                                        items[index].username.toString(),
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      ),
                                     ),
                                     // Status
                                     Padding(
@@ -105,14 +115,36 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: 60,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   // Lastseen
                                   Padding(
                                     padding: EdgeInsets.only(left: 8, right: 8),
                                     child: Text(
                                         items[index].last_seen_time.toString()),
-                                  )
+                                  ),
+                                  // Number of chats
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 8, left: 8, right: 8),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        "10",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      width: 30,
+                                      height: 30,
+                                      decoration: new BoxDecoration(
+                                        color: Colors.blue,
+                                        shape: BoxShape.circle,
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
