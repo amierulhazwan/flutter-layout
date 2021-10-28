@@ -1,11 +1,9 @@
 import 'dart:convert';
-// import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterlayout/UserDataModel.dart';
 import 'package:flutter/services.dart' as rootBundle;
-// import 'package:flutterlayout/UserDataModel.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'User List Data',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
       home: MyHomePage(),
     );
@@ -36,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           elevation: 5,
           title: const Text(
-            "User List Data",
+            "BeSquare RocketChat",
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
@@ -85,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             items[index].last_name.toString(),
                                         style: TextStyle(
                                             fontSize: 20,
-                                            color: Colors.blue,
+                                            color: Colors.amber[900],
                                             fontWeight: FontWeight.bold),
                                       ),
                                     ),
@@ -103,8 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Padding(
                                       padding:
                                           EdgeInsets.only(left: 8, right: 8),
-                                      child:
-                                          Text(items[index].status.toString()),
+                                      child: Text("Status : " +
+                                          items[index].status.toString()),
                                     )
                                   ],
                                 ),
@@ -130,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     child: Container(
                                       alignment: Alignment.center,
                                       child: Text(
-                                        "10",
+                                        items[index].id.toString(),
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             fontSize: 16,
@@ -140,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       width: 30,
                                       height: 30,
                                       decoration: new BoxDecoration(
-                                        color: Colors.blue,
+                                        color: Colors.amber[900],
                                         shape: BoxShape.circle,
                                       ),
                                     ),
