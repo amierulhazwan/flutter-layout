@@ -31,14 +31,33 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 5,
-          title: const Text(
-            "BeSquare RocketChat",
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
+      backgroundColor: Colors.deepOrangeAccent,
+      appBar: AppBar(
+        elevation: 5,
+        title: const Text(
+          "BeSquare RocketChat",
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        body: FutureBuilder(
+      ),
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("picture/bg.jpg"), fit: BoxFit.cover),
+        ),
+        // child: Center(child: FlutterLogo(size: 300)),
+
+        // child: Container(
+        //   decoration: BoxDecoration(
+        //     gradient: LinearGradient(
+        //       begin: Alignment.topRight,
+        //       end: Alignment.bottomLeft,
+        //       colors: [
+        //         Colors.red,
+        //         Colors.blue,
+        //       ],
+        //     ),
+        //   ),
+        child: FutureBuilder(
           future: ReadJsonData(),
           builder: (context, data) {
             if (data.hasError) {
@@ -160,7 +179,10 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             }
           },
-        ));
+        ),
+      ),
+      // ),
+    );
   }
 
   Future<List<UserDataModel>> ReadJsonData() async {
