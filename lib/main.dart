@@ -143,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       alignment: Alignment.center,
                                       child: Text(
                                         items[index].messages == null
-                                            ? "0"
+                                            ? ""
                                             : items[index].messages.toString(),
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
