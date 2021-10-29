@@ -141,27 +141,39 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Padding(
                                     padding: EdgeInsets.only(left: 8, right: 8),
                                     child: Text(
-                                        items[index].last_seen_time.toString()),
+                                      items[index].last_seen_time.toString(),
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          // color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
-                                  // Number of chats
+                                  // Number of chats >> User Id
                                   Padding(
                                     padding: EdgeInsets.only(
-                                        top: 8, left: 8, right: 8),
+                                        top: 5, left: 8, right: 8),
                                     child: Container(
                                       alignment: Alignment.center,
                                       child: Text(
                                         items[index].id.toString(),
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       ),
-                                      width: 30,
-                                      height: 30,
+                                      width: 35,
+                                      height: 35,
                                       decoration: new BoxDecoration(
                                         color: Colors.amber[900],
                                         shape: BoxShape.circle,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey,
+                                            offset: Offset(0.0, 1.0), //(x,y)
+                                            blurRadius: 6.0,
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
