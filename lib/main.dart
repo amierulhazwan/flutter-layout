@@ -44,19 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
           image: DecorationImage(
               image: AssetImage("picture/bg.jpg"), fit: BoxFit.cover),
         ),
-        // child: Center(child: FlutterLogo(size: 300)),
-
-        // child: Container(
-        //   decoration: BoxDecoration(
-        //     gradient: LinearGradient(
-        //       begin: Alignment.topRight,
-        //       end: Alignment.bottomLeft,
-        //       colors: [
-        //         Colors.red,
-        //         Colors.blue,
-        //       ],
-        //     ),
-        //   ),
         child: FutureBuilder(
           future: ReadJsonData(),
           builder: (context, data) {
