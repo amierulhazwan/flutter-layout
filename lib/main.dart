@@ -135,14 +135,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ),
-                                  // Number of chats >> User Id
+                                  // Messages
                                   Padding(
                                     padding: EdgeInsets.only(
                                         top: 5, left: 8, right: 8),
                                     child: Container(
                                       alignment: Alignment.center,
                                       child: Text(
-                                        items[index].id.toString(),
+                                        items[index].messages == null
+                                            ? "0"
+                                            : items[index].messages.toString(),
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             fontSize: 15,

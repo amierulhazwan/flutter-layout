@@ -6,16 +6,17 @@ class UserDataModel {
   String? last_seen_time;
   String? avatar;
   String? status;
+  int? messages;
 
-  UserDataModel({
-    this.id,
-    this.first_name,
-    this.last_name,
-    this.username,
-    this.last_seen_time,
-    this.avatar,
-    this.status,
-  });
+  UserDataModel(
+      {this.id,
+      this.first_name,
+      this.last_name,
+      this.username,
+      this.last_seen_time,
+      this.avatar,
+      this.status,
+      this.messages});
 
   UserDataModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -25,5 +26,6 @@ class UserDataModel {
     last_seen_time = json['last_seen_time'];
     avatar = json['avatar'];
     status = json['status'];
+    messages = json['messages'];
   }
 }
