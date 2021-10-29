@@ -62,7 +62,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: 60,
                               child: Image(
                                 image: NetworkImage(
-                                    items[index].avatar.toString()),
+                                  items[index].avatar == null
+                                      ? 'https://cdn1.iconfinder.com/data/icons/robots-avatars-set/354/Cute_robot___robot_robo_cute_cyborg-512.png'
+                                      : items[index].avatar.toString(),
+                                ),
                                 fit: BoxFit.fill,
                               ),
                             ),
